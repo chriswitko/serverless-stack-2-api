@@ -50,7 +50,7 @@ provider:
       # the specific table for the stage
       Resource:
         - "Fn::GetAtt": [ NotesTable, Arn ]
-        
+
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
   # - path: url path is /notes
@@ -119,3 +119,5 @@ functions:
 resources:
   # DynamoDB
   - ${file(resources/dynamodb-table.yml)}
+  # S3
+  - ${file(resources/s3-bucket.yml)}
